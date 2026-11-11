@@ -1,0 +1,180 @@
+{
+  "version": 1,
+  "author": "AIoT Prototype - Bearing Fault Detector",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-esp32-devkit-v1",
+      "id": "esp",
+      "top": 0,
+      "left": 0,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-mpu6050",
+      "id": "imu1",
+      "top": -40,
+      "left": 180,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-ntc-temperature-sensor",
+      "id": "temp1",
+      "top": 80,
+      "left": 180,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-potentiometer",
+      "id": "acoustic_sim",
+      "top": 180,
+      "left": 180,
+      "attrs": {
+        "label": "Acoustic HF Envelope"
+      }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led_ok",
+      "top": -60,
+      "left": -90,
+      "attrs": {
+        "color": "green",
+        "label": "Normal"
+      }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led_fault",
+      "top": 10,
+      "left": -90,
+      "attrs": {
+        "color": "red",
+        "label": "Fault Alert"
+      }
+    }
+  ],
+  "connections": [
+    [
+      "esp:GND.1",
+      "imu1:GND",
+      "black",
+      [
+        "h0"
+      ]
+    ],
+    [
+      "esp:3V3",
+      "imu1:VCC",
+      "red",
+      [
+        "h0"
+      ]
+    ],
+    [
+      "esp:D21",
+      "imu1:SDA",
+      "blue",
+      [
+        "h0"
+      ]
+    ],
+    [
+      "esp:D22",
+      "imu1:SCL",
+      "yellow",
+      [
+        "h0"
+      ]
+    ],
+    [
+      "esp:D15",
+      "imu1:INT",
+      "purple",
+      [
+        "h0"
+      ]
+    ],
+    [
+      "esp:GND.1",
+      "temp1:GND",
+      "black",
+      [
+        "h0"
+      ]
+    ],
+    [
+      "esp:3V3",
+      "temp1:VCC",
+      "red",
+      [
+        "h0"
+      ]
+    ],
+    [
+      "esp:D34",
+      "temp1:OUT",
+      "orange",
+      [
+        "h0"
+      ]
+    ],
+    [
+      "esp:GND.1",
+      "acoustic_sim:GND",
+      "black",
+      [
+        "h0"
+      ]
+    ],
+    [
+      "esp:3V3",
+      "acoustic_sim:VCC",
+      "red",
+      [
+        "h0"
+      ]
+    ],
+    [
+      "esp:D35",
+      "acoustic_sim:SIG",
+      "cyan",
+      [
+        "h0"
+      ]
+    ],
+    [
+      "esp:D2",
+      "led_ok:A",
+      "green",
+      [
+        "h0"
+      ]
+    ],
+    [
+      "esp:GND.2",
+      "led_ok:C",
+      "black",
+      [
+        "h0"
+      ]
+    ],
+    [
+      "esp:D4",
+      "led_fault:A",
+      "red",
+      [
+        "h0"
+      ]
+    ],
+    [
+      "esp:GND.2",
+      "led_fault:C",
+      "black",
+      [
+        "h0"
+      ]
+    ]
+  ],
+  "dependencies": {}
+}

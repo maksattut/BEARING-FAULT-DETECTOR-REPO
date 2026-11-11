@@ -1,0 +1,6 @@
+Stage,Precision,Sparsity_Pct,Test_Accuracy_Pct,Macro_F1,Flash_Model_Size_KB,Peak_RAM_Arena_KB,Inference_Latency_ms,Energy_Per_Inference_mJ,Pareto_Optimal
+1. Baseline Float32 DS-CNN,FP32,0.0,96.4,0.963,148.6,94.2,112.4,1.65,False
+2. Dynamic Range Quantization,INT8_Weights_FP32_Act,0.0,96.1,0.96,44.8,78.5,68.2,1.0,True
+3. Pruned (30%) + Full INT8 PTQ,INT8_Full,30.0,95.8,0.957,34.2,41.0,34.6,0.51,True
+4. Pruned (50%) + Full INT8 PTQ [DEPLOYED],INT8_Full,50.0,95.3,0.952,26.4,36.8,24.8,0.36,True
+5. Pruned (75%) + Full INT8 PTQ [Over-Pruned],INT8_Full,75.0,86.2,0.854,18.1,32.4,19.5,0.29,False
